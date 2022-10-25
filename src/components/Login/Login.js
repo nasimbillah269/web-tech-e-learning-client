@@ -2,6 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider';
 
@@ -23,9 +24,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                toast.success('successfull')
+                form.reset();
             })
             .catch(error => {
                 console.error('error', error)
+                toast.error(error.message)
             })
     }
     const handleGoogleSignIn = () => {
@@ -33,9 +37,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                toast.success('successfull')
             })
             .catch(error => {
                 console.error('error', error)
+                toast.error(error.message)
             })
     }
 
@@ -44,9 +50,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                toast.success('successfull')
             })
             .catch(error => {
                 console.error('error', error)
+                toast.error(error.message)
             })
     }
     return (
