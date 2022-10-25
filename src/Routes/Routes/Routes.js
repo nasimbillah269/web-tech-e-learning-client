@@ -3,6 +3,8 @@ import Blog from "../../components/Blog/Blog";
 import Course from "../../components/Course/Course";
 import CourseDetail from "../../components/CourseDetail/CourseDetail";
 import Faq from "../../components/Faq/Faq";
+import Login from "../../components/Login/Login";
+import Register from "../../components/Register/Register";
 import Main from "../../layout/Main";
 
 const routes = createBrowserRouter([
@@ -11,7 +13,7 @@ const routes = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
-                path: '/',
+                path: '/courses',
                 loader: () => fetch('http://localhost:5000/courses'),
                 element: <Course></Course>
 
@@ -33,9 +35,23 @@ const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
             }
+
         ]
-    }
+
+    },
+
+
+
+
 
 ]);
 

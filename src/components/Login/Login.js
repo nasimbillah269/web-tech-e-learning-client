@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Faq = () => {
+const Login = () => {
     return (
         <div>
 
-            <h2>Faq page</h2>
+            <h3>Login page</h3>
         </div>
     );
 };
 
-export default Faq;
+export default Login;
