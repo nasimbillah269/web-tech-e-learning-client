@@ -11,7 +11,7 @@ const SingleCourse = ({ course }) => {
     // console.log(course)
     const { id, title, picture, price, reting } = course;
     return (
-        <div className='col-lg-4 mt-3 '>
+        <div className='col-lg-4 mt-5 '>
             <Card style={{ height: '24rem' }} className="ps-3 pt-2">
                 <Image style={{ width: "14rem", height: "14rem" }} src={picture}></Image>
                 <Card.Body>
