@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import logo from '../../image/logo.png'
+import { FiSun } from "react-icons/fi";
+import { HiMoon } from "react-icons/hi";
 
 const Header = () => {
+    const [open, setOpen] = useState(false)
+
     const { user, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
@@ -21,16 +26,26 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand >Web-Tech-E-Learning</Navbar.Brand>
+                    <Navbar.Brand >
+                        <Image style={{ width: "40px", height: "40px" }} roundedCircle src={logo} className="me-2"></Image>
+                        Web-Tech-E-Learning
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Link className='text-decoration-none me-2 text-white' to="/courses">Course</Link>
                             <Link className='text-decoration-none me-2 text-white' to="/faq">Faq</Link>
                             <Link className='text-decoration-none me-2 text-white' to="/blog">Blog</Link>
+                            <div onClick={() => setOpen(!open)}>
+                                {
+                                    open ? <p className='text-white m-0 '> <HiMoon className='text-danger  fs-3'></HiMoon>Dark</p>
+                                        : <p className='text-white m-0'><FiSun className='text-danger fs-3'></FiSun>Light</p>
 
+                                }
+                            </div>
                         </Nav>
                         <Nav>
+
                             {
                                 user?.uid ? <Button onClick={handleLogOut} variant="light">LogOut</Button>
                                     :
