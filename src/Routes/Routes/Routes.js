@@ -17,24 +17,24 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://web-tech-e-learning-server.vercel.app/courses'),
                 element: <Course></Course>
 
             },
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://web-tech-e-learning-server.vercel.app/courses'),
                 element: <Course></Course>
 
             },
             {
                 path: '/courses/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`),
+                loader: ({ params }) => fetch(`https://web-tech-e-learning-server.vercel.app/courses/${params.id}`),
                 element: <CourseDetail></CourseDetail>
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://web-tech-e-learning-server.vercel.app/category/${params.id}`),
                 element: <CourseDetail></CourseDetail>
             },
             {
