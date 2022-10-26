@@ -22,7 +22,7 @@ const CourseDetail = () => {
                     <LeftSideNav></LeftSideNav>
                 </Col>
                 <Col lg="9">
-                    <Card className='bg-light '>
+                    <Card className='bg-light shadow'>
                         <Card.Header>
                             <div className='d-flex justify-content-between'>
                                 <p className='m-0 fw-bold fs-2'>{title}</p>

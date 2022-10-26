@@ -7,7 +7,7 @@ import SingleCourse from '../SingleCourse/SingleCourse';
 const Course = () => {
     const courses = useLoaderData();
     return (
-        <Container>
+        <Container className='mt-5'>
             <Row>
                 <Col lg="3">
                     <LeftSideNav></LeftSideNav>
