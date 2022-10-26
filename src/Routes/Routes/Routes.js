@@ -3,6 +3,7 @@ import Blog from "../../components/Blog/Blog";
 import CheckOut from "../../components/CheckOut/CheckOut";
 import Course from "../../components/Course/Course";
 import CourseDetail from "../../components/CourseDetail/CourseDetail";
+import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import Faq from "../../components/Faq/Faq";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
@@ -57,14 +58,13 @@ const routes = createBrowserRouter([
                 path: 'login',
                 element: <Login></Login>
             }
-
         ]
-
     },
 
-
-
-
+    {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>
+    }
 
 ]);
 
