@@ -8,6 +8,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import logo from '../../image/logo.png'
 import { FiSun } from "react-icons/fi";
 import { HiMoon } from "react-icons/hi";
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     const [open, setOpen] = useState(false)
@@ -55,10 +56,15 @@ const Header = () => {
                                     </>
                             }
 
-                            <Nav.Link eventKey={2} href="#memes">
-                                {
-                                    user?.photoURL && <Image style={{ width: "40px", height: "40px" }} roundedCircle src={user?.photoURL}></Image>
-                                }
+                            <Nav.Link>
+                                {/* <p className='text-withe' ></p> */}
+                                <ReactTooltip className='bg-info' />
+                                <div data-tip={user?.displayName}>
+
+                                    {
+                                        user?.photoURL && <Image style={{ width: "40px", height: "40px" }} roundedCircle src={user?.photoURL}></Image>
+                                    }
+                                </div>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

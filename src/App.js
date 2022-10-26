@@ -1,4 +1,4 @@
-
+import ReactTooltip from 'react-tooltip';
 import { Toaster } from 'react-hot-toast';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
@@ -11,6 +11,7 @@ function App() {
 
       </RouterProvider>
       <Toaster></Toaster>
+      <ReactTooltip className='bg-info'></ReactTooltip>
     </div>
   );
 }

@@ -3,10 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-const CheckOut = () => {
 
+const CheckOut = () => {
     return (
         <div className='w-50 mx-auto bg-light mt-5 p-5 shadow-lg rounded'>
+
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
