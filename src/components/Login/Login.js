@@ -4,12 +4,17 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -26,6 +31,7 @@ const Login = () => {
                 console.log(user)
                 toast.success('successfull')
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error('error', error)
@@ -38,6 +44,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('successfull')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error('error', error)
@@ -51,6 +58,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('successfull')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error('error', error)
