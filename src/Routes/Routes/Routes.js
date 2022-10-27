@@ -38,8 +38,8 @@ const routes = createBrowserRouter([
                 element: <CourseDetail></CourseDetail>
             },
             {
-                path: '/course/checkout/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/course/checkout/${params.id}`),
+                path: '/checkout/:id',
+                loader: ({ params }) => fetch(`https://web-tech-e-learning-server.vercel.app/courses${params.id}`),
                 element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>
             },
             {

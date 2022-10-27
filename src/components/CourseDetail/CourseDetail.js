@@ -15,6 +15,7 @@ const CourseDetail = () => {
     const course = useLoaderData();
     // console.log(course)
     const { id, title, description, instractorPicture, name, picture } = course;
+    console.log(id)
     return (
         <Container className='mt-5 '>
             <Row>
@@ -46,7 +47,7 @@ const CourseDetail = () => {
                                     <span>{name}</span>
                                 </div>
                             </div>
-                            <Link to={`/course/checkout/${id}`}><Button className='mt-3 w-100' variant="outline-primary">Get premium access</Button></Link>
+                            <Link to={`/checkout/${id}`}><Button className='mt-3 w-100' variant="outline-primary">Get premium access</Button></Link>
                         </Card.Body>
                     </Card>
 

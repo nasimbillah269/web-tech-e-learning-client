@@ -2,7 +2,11 @@
 
 * Web Tech E Learning
 
-## Live Web Site Link :
+## Live Web Site Link : https://web-tect-e-learning.web.app/
+
+## Live web site hostion
+
+* Firebase
 
 ## Use Technolodgy
 
@@ -22,7 +26,7 @@ useing navber six course and left site navigation and one course detail button c
 
 ## Blog page
 
-Four question answer add blog page.  desktop  view one column and mobile view one column.
+* Four question answer add blog page.  desktop  view one column and mobile view one column.
 
 ##  Register page
 
@@ -30,5 +34,5 @@ Four question answer add blog page.  desktop  view one column and mobile view on
 
 ## Login page
 
-privet route allow user then login user. login suceess react toast display successfully message.
+* privet route allow user then login user. login suceess react toast display successfully message.
 user email password dose not match well be error message display react toast.
