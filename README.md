@@ -4,7 +4,7 @@
 
 ## Live Web Site Link : https://web-tect-e-learning.web.app/
 
-## Live web site hostion
+## Live web site hosting
 
 * Firebase
 
