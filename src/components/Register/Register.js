@@ -4,13 +4,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
     const { createUser, updateUserProfile, googleSignIn, githubSignIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -29,6 +30,7 @@ const Register = () => {
                 console.log(user)
                 handleUpdateUserProfile(name, photoURL)
                 toast.success('successfull')
+                navigate('/courses')
                 form.reset()
             })
             .catch(error => {
@@ -55,6 +57,8 @@ const Register = () => {
         googleSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
+                toast.success('successfull')
+                navigate('/courses')
                 console.log(user)
             })
             .catch(error => {
@@ -66,6 +70,8 @@ const Register = () => {
         githubSignIn(githubProvider)
             .then(result => {
                 const user = result.user;
+                toast.success('successfull')
+                navigate('/courses')
                 console.log(user)
             })
             .catch(error => {
@@ -94,7 +100,7 @@ const Register = () => {
                 <Form.Control type="password" name="password" placeholder="Password" required />
             </Form.Group>
             <p className='m-0 p-0'><small> Alrady have an account? <Link className='text-decoration-none' to='/login'>Please Login</Link></small></p>
-            <Button variant="primary" type="submit">
+            <Button className='w-100' variant="primary" type="submit">
                 Register
             </Button>
             <p className='text-center fw-bold text-danger'><u>OR</u></p>

@@ -78,7 +78,7 @@ const Login = () => {
                 <Form.Control type="password" name="password" placeholder="Password" required />
             </Form.Group>
             <p className='fw-bold'><small>New To Web tech e learning? <Link className='text-decoration-none' to='/register'>Please Register</Link></small></p>
-            <Button variant="primary" type="submit">
+            <Button className='w-100' variant="primary" type="submit">
                 Login
             </Button>
             <p className='text-center fw-bold text-danger'><u>OR</u></p>
